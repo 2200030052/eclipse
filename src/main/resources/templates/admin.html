@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0e2433;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Header styling */
+        .header {
+            background-color: #45b6fe;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        /* Sidebar styling */
+        .sidebar {
+            width: 250px;
+            background-color: #112f41;
+            height: 100vh;
+            padding-top: 80px; /* Space for header */
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow-y: auto;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .sidebar a:hover {
+            background-color: #45b6fe;
+        }
+
+        /* Main container styling */
+        .container {
+            margin-left: 270px; /* Width of the sidebar + some gap */
+            padding: 20px;
+            max-width: calc(100% - 270px);
+            margin-top: 80px; /* Space for the header */
+            background-color: #0e2433;
+        }
+
+        .container h2 {
+            color: #45b6fe;
+        }
+
+        .container section {
+            margin-bottom: 40px;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .data-table th, .data-table td {
+            border: 1px solid #45b6fe;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .data-table th {
+            background-color: #112f41;
+        }
+
+        .data-table td {
+            background-color: #0e2433;
+        }
+
+        /* Responsive design for smaller screens */
+        @media screen and (max-width: 768px) {
+            .sidebar {
+                width: 100px;
+            }
+
+            .sidebar a {
+                font-size: 14px;
+                padding: 10px;
+                text-align: center;
+            }
+
+            .container {
+                margin-left: 110px;
+                max-width: calc(100% - 110px);
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            .sidebar {
+                width: 60px;
+            }
+
+            .sidebar a {
+                font-size: 12px;
+                padding: 8px;
+            }
+
+            .container {
+                margin-left: 70px;
+                max-width: calc(100% - 70px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <h1>Admin Dashboard</h1>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="#student-data">Manage Students</a>
+        <a href="#registered-students">Registered Students</a>
+        <a href="#update-companies">Update Companies</a>
+        <a href="#ongoing-recruitments">Ongoing Recruitments</a>
+        <a href="#selected-students">Selected Students</a>
+        <a href="#logout">Logout</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h2>Welcome, Admin</h2>
+
+        <!-- Student Data Section -->
+        <section id="student-data">
+            <h2>Manage Student Data</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Student ID</th>
+                        <th>Full Name</th>
+                        <th>Email</th>
+                        <th>Course</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>001</td>
+                        <td>John Doe</td>
+                        <td>john@example.com</td>
+                        <td>Computer Science</td>
+                        <td><button>Edit</button> <button>Delete</button></td>
+                    </tr>
+                    <!-- Add more student rows here -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Registered Students Section -->
+        <section id="registered-students">
+            <h2>Students Registered for Companies</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Company Name</th>
+                        <th>Registration Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>Tesla</td>
+                        <td>2024-10-02</td>
+                    </tr>
+                    <!-- Add more registered students here -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Update Companies Section -->
+        <section id="update-companies">
+            <h2>Update Company Information</h2>
+            <form action="/update-companies" method="post">
+                <div>
+                    <label for="company-name">Company Name:</label>
+                    <input type="text" id="company-name" name="companyName" required>
+                </div>
+                <div>
+                    <label for="company-description">Company Description:</label>
+                    <textarea id="company-description" name="companyDescription" required></textarea>
+                </div>
+                <button type="submit">Update Company</button>
+            </form>
+        </section>
+
+        <!-- Ongoing Recruitments Section -->
+        <section id="ongoing-recruitments">
+            <h2>Ongoing Recruitments</h2>
+            <p>Details of ongoing recruitment drives will be displayed here.</p>
+        </section>
+
+        <!-- Selected Students Section -->
+        <section id="selected-students">
+            <h2>Selected Students</h2>
+            <p>List of students who have been selected for various companies.</p>
+        </section>
+    </div>
+
+</body>
+</html>

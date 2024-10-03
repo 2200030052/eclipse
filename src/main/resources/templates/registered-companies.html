@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registered Companies</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0e2433;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .header {
+            background-color: #45b6fe;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #112f41;
+            height: 100vh;
+            padding-top: 80px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow-y: auto;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            margin: 10px 0;
+        }
+
+        .sidebar a:hover {
+            background-color: #45b6fe;
+        }
+
+        .container {
+            margin-left: 270px;
+            padding: 20px;
+            max-width: calc(100% - 270px);
+            margin-top: 80px;
+        }
+
+        h2 {
+            color: #45b6fe;
+        }
+
+        .company-card {
+            background-color: #1a3a54;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .company-card h3 {
+            margin: 0;
+        }
+
+        .company-card p {
+            color: #a9c9d8;
+        }
+
+        @media screen and (max-width: 768px) {
+            .sidebar {
+                width: 100px;
+            }
+
+            .sidebar a {
+                font-size: 14px;
+                padding: 10px;
+                text-align: center;
+            }
+
+            .container {
+                margin-left: 110px;
+                max-width: calc(100% - 110px);
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            .sidebar {
+                width: 60px;
+            }
+
+            .sidebar a {
+                font-size: 12px;
+                padding: 8px;
+            }
+
+            .container {
+                margin-left: 70px;
+                max-width: calc(100% - 70px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <h1>Registered Companies</h1>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="upcoming-companies.html">Upcoming Companies</a>
+        <a href="registered-companies.html">Registered Companies</a>
+        <a href="#profile">Profile</a>
+        <a href="#logout">Logout</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h2>Registered Companies</h2>
+
+        <!-- Registered Company 1 -->
+        <div class="company-card">
+            <h3>Company ABC</h3>
+            <p>Registration Date: 1st October 2024</p>
+        </div>
+
+        <!-- Registered Company 2 -->
+        <div class="company-card">
+            <h3>Company XYZ</h3>
+            <p>Registration Date: 5th October 2024</p>
+        </div>
+
+        <!-- Registered Company 3 -->
+        <div class="company-card">
+            <h3>Company PQR</h3>
+            <p>Registration Date: 10th October 2024</p>
+        </div>
+    </div>
+
+</body>
+
+</html>
